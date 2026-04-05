@@ -5,11 +5,91 @@
 
 ---
 
+## 🖼️ IMAGE GUIDE — What to Paste & Where
+
+The MUJ form explicitly asks for **"results, data, flow charts, diagrams or other evidence"** in Section 5.  
+You can paste images directly into the `.docx` file using `Ctrl+V` or **Insert → Pictures**.
+
+### ✅ READY TO USE — From `docs/img/` folder (already on your disk)
+
+These are professional vector diagrams. Open the `.svg` file in a browser (`File → Open`), screenshot it with `Win+Shift+S`, then paste into the form.
+
+| Image File | Paste In | What It Shows |
+|---|---|---|
+| `docs/img/HalfKAv2-45056-256x2P8x2[-32-32-1]x8.svg` | **Section 5 & 6** | ⭐ **BEST ONE** — The exact architecture closest to DeepCastle: HalfKAv2 + dual accumulators + 8 layer stacks. Shows the whole network. |
+| `docs/img/HalfKAv2-45056-256x2P1x2-32-32-1.svg` | **Section 5** | Simpler HalfKAv2 diagram — good for explaining the feature transformer |
+| `docs/img/SFNNv13_architecture.svg` | **Section 8 (Prior Art)** | The current Stockfish architecture — use this to show "what came before" DeepCastle |
+| `docs/img/SFNNv13_architecture_detailed.svg` | **Section 5 & 7** | Detailed version with LayerStack, SqrCReLU, PSQT — shows exactly what DeepCastle is based on |
+| `docs/img/HalfKP-40960-4x2-8-1.svg` | **Section 8 (Prior Art)** | Older HalfKP architecture — good as "prior art before HalfKAv2" |
+| `docs/img/mv.svg` | **Section 5** | Matrix×vector multiplication diagram — explains the linear layer |
+| `docs/img/mvs.svg` | **Section 5** | Sparse input matrix multiplication — visually explains why NNUE is fast |
+| `docs/img/clipped_relu.png` | **Section 5** | ClippedReLU activation function graph |
+| `docs/img/sigmoid.png` | **Section 5** | Sigmoid function — used to explain the loss function |
+| `docs/img/mse_loss.png` | **Section 5** | MSE loss visualization — include to compare against your power-law loss |
+| `docs/img/sigmoid_wdl_fit.png` | **Section 5 & 7** | Sigmoid WDL fit — directly relevant to your symmetric sigmoid power loss |
+| `docs/img/fc_input_density.png` | **Section 5** | Feature density plot — visually proves the sparsity (~0.1% active features) |
+| `docs/img/m256_add_dpbusd_epi32.svg` | **Section 5 & 6** | SIMD AVX2 dot product operation — explains the ~50ns inference speed |
+| `docs/img/m256_process_chunk.svg` | **Section 5** | Full SIMD chunk processing diagram — explains the fast inference |
+| `docs/img/board_0.png` | **Section 5** | Chess board position showing how exactly 4 pieces activate features |
+| `docs/img/A-768-8-8-1.svg` | **Section 5** | Simple NNUE architecture diagram — good intro before the complex one |
+
+---
+
+### 📸 CAPTURE YOURSELF — Screenshots to take
+
+| What to Capture | How | Paste In |
+|---|---|---|
+| **CuteChess tournament results** | Screenshot of the in-progress 180-game match score panel (W/L/D table + Elo) | **Section 5 & 11** — strongest proof of benchmark |
+| **CuteChess opening game position** | A game where DeepCastle plays a sharp opening (e.g., Sicilian/King's Indian) | **Section 5** |
+| **CuteChess middlegame position** | A complex tactical position mid-game where DeepCastle found a good move | **Section 5** |
+| **CuteChess endgame position** | A winning endgame for DeepCastle — shows evaluation accuracy in simplified positions | **Section 5** |
+| **Training loss curve** | Screenshot from TensorBoard (or your training output log) showing loss going 0.00542→0.00230 | **Section 5 & 11** |
+| **DeepCastle web UI** | Screenshot of `deep-castle-official.vercel.app` — the live game screen with eval bar visible | **Section 11** |
+| **DeepCastle game review screen** | Screenshot of the move analysis page showing Brilliant/Blunder badges | **Section 6** |
+
+---
+
+### 🎨 AI-GENERATED — Created specifically for this patent
+
+> Run `generate_image()` tool to create these if needed
+
+| Image | Paste In | Description |
+|---|---|---|
+| **DeepCastle system pipeline** | **Section 5** | Full flowchart: gensfen → binpack → training → quantization → C++ engine → Docker → web |
+| **Dual-NNUE switching diagram** | **Section 5 & 7** | SmallNet/BigNet decision flowchart with 962cp and 277cp thresholds labeled |
+
+---
+
+### 📋 RECOMMENDED ORDER TO PASTE IN THE FORM
+
+For **Section 5** (most important), paste images in this order:
+1. `board_0.png` — "Here is a chess position with 4 active features"
+2. `HalfKAv2-45056-256x2P8x2[-32-32-1]x8.svg` — "Here is the full DeepCastle network architecture"
+3. Training loss curve screenshot — "Here is the training convergence"
+4. CuteChess tournament results screenshot — "Here are the benchmark results"
+5. DeepCastle web UI screenshot — "Here is the deployed application"
+
+For **Section 7** (Novelty):
+1. `SFNNv13_architecture_detailed.svg` — "The architecture DeepCastle is based on"
+2. `sigmoid_wdl_fit.png` — "The loss function used"
+3. CuteChess middlegame/endgame — "Evidence of strong play"
+
+For **Section 8** (Prior Art):
+1. `SFNNv13_architecture.svg` — Stockfish v13 architecture (prior art)
+2. `HalfKP-40960-4x2-8-1.svg` — Older HalfKP architecture (prior art)
+
+For **Section 11** (Development Stage):
+1. CuteChess tournament screenshot
+2. DeepCastle web UI screenshot
+
+---
+
 ## HOW TO USE
 1. Open `Template for Patent Filing_MUJ_2026.docx`
 2. Find the matching section number in the form
 3. Copy the content from the grey code block below
 4. Paste directly into the form field
+5. For images: open the `.svg` in a browser → `Win+Shift+S` to snip → paste into Word
 
 > **Fields marked `[FILL: ...]` need your personal info before submitting.**
 
